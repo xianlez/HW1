@@ -1,8 +1,7 @@
 # in-class-activities
 ## Devlogs
 ### W1
-Write your W1 activity Devlog here.
-
+The cat cannot follow the camera movement.
 (https://itch.io/game/edit/5071784)
 
 ### W2
