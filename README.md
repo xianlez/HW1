@@ -78,3 +78,20 @@ In CatW3, I implemented health reduction, health and speech text updates, copyin
 One challenge was assigning component references in the Inspector. I solved this by dragging the Ball GameObject from the Hierarchy into the appropriate fields. I also resized and repositioned the balls.
 
 During testing, the cat changed color and lost health when touching a ball. The speech displayed "ouch" at higher health and "OH NO!" below half health. Initially, the cat remained alive with negative health because Destroy Cat When Dead was unchecked. After enabling it, the cat disappeared when its health reached zero.
+
+W4
+## Devlog — Collision Activity
+
+**Table #:10
+
+1. I added a Capsule Collider to the cat, set its direction to the Z-axis, and adjusted it to fit the cat’s body. I added a Sphere Collider to the soccer ball and a Box Collider to the goal area.
+
+I added Rigidbodies to both the cat and the soccer ball so they could move and respond to physics. I left Is Trigger disabled on their colliders so they could physically collide. I enabled Is Trigger on the goal’s Box Collider so the ball could pass through the goal area while triggering goal detection. The stationary goal did not need a Rigidbody.
+
+I also added the BounceOffWall component to the cat and the ball and connected each component to its own Rigidbody.
+
+
+2.I implemented OnTriggerEnter to check whether the object the ball entered had the “Goal” tag. When it did, the script called MadeGoal to log a message, play the celebration effect, increase the score, and reset the timer. I used Update and Time.deltaTime to track and display the time since the last goal.
+
+
+3.During testing, the ball bounced away from the goal instead of scoring. I corrected the goal’s collider settings so the goal area functioned as a trigger. After the fix, entering the goal increased the score, and the timer reset and continued counting.
