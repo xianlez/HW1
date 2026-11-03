@@ -95,3 +95,32 @@ I also added the BounceOffWall component to the cat and the ball and connected e
 
 
 3.During testing, the ball bounced away from the goal instead of scoring. I corrected the goal’s collider settings so the goal area functioned as a trigger. After the fix, entering the goal increased the score, and the timer reset and continued counting.
+
+
+# W5 Devlog
+
+## DeerW5:
+
+The goal was to make the deer walk toward a target GameObject using a NavMeshAgent.
+
+The class needs two member variables:
+- `Transform target` stores a reference to the target and allows it to be assigned in the Inspector.
+- `NavMeshAgent agent` stores the navigation component attached to the deer.
+
+I used Unity’s `Start()` method because the destination only needs to be set once when the game begins. Inside `Start()`, `GetComponent<NavMeshAgent>()` gets the deer’s navigation component. If a target is assigned, `SetDestination(target.position)` tells the agent where to move.
+
+The target variable is a Transform rather than a Vector3, so I can select a scene object in the Inspector and access its position.
+
+## CatW5: 
+
+I added keyboard movement inside `Update()` so the script checks for input every frame. Pressing W adds `Vector3.forward` to the translation vector, while pressing S adds `Vector3.back`.
+
+The script uses `transform.Translate()` to move the cat. The direction vector is multiplied by `_moveSpeed` and `Time.deltaTime` to calculate each frame’s movement.
+
+When `_flipWSControls` is enabled in the Inspector, the translation vector is multiplied by `-1`. This reverses the controls, making W move backward and S move forward. I preserved the existing turning and walking animation code.
+
+## Testing and Reflection
+
+I tested that the deer moved toward its assigned target and that W and S moved the cat in opposite directions. The remaining check is to enable Flip WS Controls and confirm that both directions reverse.
+
+This activity helped me understand how Inspector references connect scripts to scene objects, how GetComponent accesses another component, and how vector addition and scalar multiplication control movement.
