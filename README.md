@@ -124,3 +124,22 @@ When `_flipWSControls` is enabled in the Inspector, the translation vector is mu
 I tested that the deer moved toward its assigned target and that W and S moved the cat in opposite directions. The remaining check is to enable Flip WS Controls and confirm that both directions reverse.
 
 This activity helped me understand how Inspector references connect scripts to scene objects, how GetComponent accesses another component, and how vector addition and scalar multiplication control movement.
+
+## week 7
+My assigned category was Unity coding：
+a. Compiling
+b. Errors: W4 pre-learning
+c. Unity methods
+i. Start(): W4 pre-learning
+ii. Update(): W4 pre-learning
+iii. Debug.Log(): W4 pre-learning
+iv. GetComponent<>(): W5 pre-learning
+v. Translate(): W5 pre-learning
+vi. SetDestination(): W6 slides
+vii. Vector3.Distance(): W6 pre-learning
+d. Unity variables
+i. Time.deltaTime
+ii. gameObject: W5 pre-learning
+e. NavMeshAgent component: W6 slides
+
+https://docs.google.com/document/d/13yni-LML8n_PMU0dRYNeQS41JEUzd5uGydpQOMvt19s/edit?usp=drivesdk
